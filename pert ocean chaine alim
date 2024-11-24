@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX 100
+
+typedef struct {
+    int adj[MAX][MAX];
+    int num_vertices;
+} Graph;
+
+int topological_order[MAX];
+int order_index = 0;
+
+void dfs_pert(Graph *graph, int start, int visited[], int stack[]) {
+    visited[start] = 1;
+    stack[start] = 1;
+
+    for (int i = 0; i < graph->num_vertices; i++) {
+        if (graph->adj[start][i]) {
+            if (stack[i]) {
+                printf("Cycle détecté dans le graphe PERT !\n");
+                exit(1);
+            }
+            if (!visited[i]) {
+                dfs_pert(graph, i, visited, stack);
+            }
+        }
+    }
+
+    stack[start] = 0;
+    topological_order[order_index++] = start;
+}
+
+void pert(Graph *graph) {
+    int visited[MAX] = {0};
+    int stack[MAX] = {0};
+
+    for (int i = 0; i < graph->num_vertices; i++) {
+        if (!visited[i]) {
+            dfs_pert(graph, i, visited, stack);
+        }
+    }
+
+    for (int i = order_index - 1; i >= 0; i--) {
+        printf("%d ", topological_order[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    Graph graph;
+
+    printf("Entrez le nombre de sommets: ");
+    scanf("%d", &graph.num_vertices);
+
+    printf("Entrez la matrice d'adjacence:\n");
+    for (int i = 0; i < graph.num_vertices; i++) {
+        for (int j = 0; j < graph.num_vertices; j++) {
+            scanf("%d", &graph.adj[i][j]);
+        }
+    }
+
+    pert(&graph);
+
+    return 0;
