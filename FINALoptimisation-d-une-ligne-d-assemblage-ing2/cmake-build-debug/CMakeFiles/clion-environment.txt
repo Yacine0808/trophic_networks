@@ -1,0 +1,4 @@
+ToolSet: 5.0 (local)@C:\Users\yacin\Documents\ECE\Informatique\Allegro\MinGW avec Allegro 4\MinGW
+Options: 
+
+Options:
