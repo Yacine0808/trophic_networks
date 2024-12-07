@@ -1,3 +1,0 @@
-C:/Users/yacin/CLionProjects/trophic_networks_project_2024/cmake-build-debug/CMakeFiles/2025_RAMDANE_TSAHEN_DIMAMBRO_GRP16.dir
-C:/Users/yacin/CLionProjects/trophic_networks_project_2024/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/yacin/CLionProjects/trophic_networks_project_2024/cmake-build-debug/CMakeFiles/rebuild_cache.dir
