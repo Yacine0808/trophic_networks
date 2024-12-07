@@ -1,0 +1,7 @@
+1 plancton
+2 krill
+3 calamar
+4 pinguoin
+5 phoque
+6 mouette
+7 baleine_bleue

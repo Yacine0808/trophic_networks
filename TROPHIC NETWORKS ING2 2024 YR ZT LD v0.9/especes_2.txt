@@ -1,0 +1,8 @@
+1 herbe
+2 limace
+3 oiseau
+4 lapin
+5 chevre
+6 boeuf
+7 aigle
+8 loup
